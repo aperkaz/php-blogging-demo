@@ -16,6 +16,9 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <x-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')">
+                    {{ __('Chirps') }}
+                </x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->
@@ -42,8 +45,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -71,6 +73,9 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
+        <x-responsive-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')">
+            {{ __('Chirps') }}
+        </x-responsive-nav-link>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -88,8 +93,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
